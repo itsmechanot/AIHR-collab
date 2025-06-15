@@ -36,6 +36,13 @@ body {
     box-shadow: var(--shadow);
     overflow: hidden;
 }
+.form {
+    margin-top: -10px;
+}
+label {
+    margin-top: -5px;
+    margin-left: -10px;
+}
 
 .form-container {
     position: absolute;
@@ -48,10 +55,6 @@ body {
     justify-content: center;
     border-radius: 10px 40px 40px 10px;
     border: 2px solid red;
-}
-.form-container.sign-in{
-    border: 2px solid black;
-    border-radius: 40px 10px 10px 40px;
 }
 
 .sign-up {
@@ -76,11 +79,14 @@ body {
     z-index: 5;
 }
 
-.form-section, .login_form {
+.form-section,
+.login_form {
     padding: 2rem;
     width: 100%;
     max-width: 400px;
+    padding-top: 20px;
 }
+
 .input-group input {
     width: 90%;
     border: 1px solid #d1d5db;
@@ -88,9 +94,10 @@ body {
     padding: 0.5rem 0.50rem;
     padding-right: 2.25rem;
     color: #374151;
-    font-size: 0.875rem;
+    font-size: 0.675rem;
     outline: none;
     margin-left: 20px;
+    padding-top: 10px;
 }
 
 h2 {
@@ -98,43 +105,30 @@ h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
-.header h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-    border: 2px solid black;
-}
-.header p{
-    margin-top: 5px;
-    text-align: center;
-    border: 2px solid blue;
-}
-
-.input-group {
-    position: relative;
-    margin-bottom: 10px;
-}
-
+.input-group,
 .input-container {
     position: relative;
     margin-bottom: 10px;
 }
 
-input, select {
+input,
+select {
     width: 90%;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 0.50rem;
-    padding-left: -20px;
-    font-size: 0.875rem;
+    padding-left: -10px;
+    font-size: 0.775rem;
     outline: none;
     transition: all 0.3s ease;
     margin-left: 20px;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(48, 35, 29, 0.2);
 }
@@ -151,9 +145,9 @@ input:focus, select:focus {
     pointer-events: none;
 }
 
-input:focus + .labelline,
-input:not(:placeholder-shown) + .labelline,
-select:valid + .labelline {
+input:focus+.labelline,
+input:not(:placeholder-shown)+.labelline,
+select:valid+.labelline {
     transform: translateY(-1.25rem) scale(0.9);
     color: var(--primary-color);
     background: white;
@@ -165,6 +159,7 @@ select:valid + .labelline {
     top: 50%;
     transform: translateY(-50%);
     color: #777;
+    font-size: 15px;
 }
 
 button {
@@ -190,17 +185,17 @@ button:hover {
 .toggle-text {
     font-size: 0.875rem;
     color: var(--primary-color);
-    margin-top: 1rem;
+    margin-top: 10px;
     text-align: center;
 }
 
 .toggle-link {
     color: var(--primary-color);
     font-weight: 600;
-    text-decoration: none;
+    text-decoration: underline;
     display: block;
     text-align: center;
-    margin-top: 0.5rem;
+    margin-top: 5px;
 }
 
 .toggle-link:hover {
@@ -267,7 +262,7 @@ button:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
@@ -291,26 +286,29 @@ button:hover {
 }
 
 .toggle-btn:hover {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
+
+
 
 @media (max-width: 768px) {
     .container {
         height: auto;
         flex-direction: column;
     }
-    
-    .form-container, .toggle-container {
+
+    .form-container,
+    .toggle-container {
         position: relative;
         width: 100%;
         height: auto;
         left: 0;
     }
-    
+
     .toggle {
         display: none;
     }
-    
+
     .container.active .sign-up,
     .container.active .sign-in {
         transform: none;
