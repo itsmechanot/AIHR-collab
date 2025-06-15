@@ -10,12 +10,12 @@
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-} */
+}
 
 body {
     background-color: #F0F0F0;
