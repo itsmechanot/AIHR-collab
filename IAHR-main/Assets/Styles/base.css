@@ -36,25 +36,26 @@ body {
     box-shadow: var(--shadow);
     overflow: hidden;
 }
-.form {
-    margin-top: -10px;
-}
-label {
-    margin-top: -5px;
-    margin-left: -10px;
-}
 
 .form-container {
     position: absolute;
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
-    width: 50%;
+    width: 54%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px 40px 40px 10px;
-    border: 2px solid red;
+    background: white;
+}
+
+.form-container.sign-in {
+    /* border: 2px solid black; */
+    border-radius: 40px 10px 10px 40px;
+    width: 55%;
+    margin-left: -75px;
+    /* background-color: white; */
 }
 
 .sign-up {
@@ -84,7 +85,6 @@ label {
     padding: 2rem;
     width: 100%;
     max-width: 400px;
-    padding-top: 20px;
 }
 
 .input-group input {
@@ -94,10 +94,9 @@ label {
     padding: 0.5rem 0.50rem;
     padding-right: 2.25rem;
     color: #374151;
-    font-size: 0.675rem;
+    font-size: 0.875rem;
     outline: none;
     margin-left: 20px;
-    padding-top: 10px;
 }
 
 h2 {
@@ -105,13 +104,52 @@ h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
-.input-group,
+.header {
+    /* border: 2px solid green; */
+    margin: 30px 0px 35px 0px;
+    width: 100%;
+}
+
+/* .divider {
+ width: 50%;
+} */
+
+.header h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    /* border: 2px solid black; */
+}
+
+.header p {
+    margin-top: 5px;
+    text-align: center;
+    /* border: 2px solid blue; */
+    color: var(--primary-color);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 5px;
+}
+
 .input-container {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    /* border: 2px solid red; */
+    width: 90%;
+}
+
+/* .input-container .i {
+    margin-left: 0 10px 0 30px;
+} */
+
+.sign-in_button {
+    width: 80%;
+    margin-left: 30px;
 }
 
 input,
@@ -120,8 +158,8 @@ select {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 0.50rem;
-    padding-left: -10px;
-    font-size: 0.775rem;
+    padding-left: -20px;
+    font-size: 0.875rem;
     outline: none;
     transition: all 0.3s ease;
     margin-left: 20px;
@@ -159,7 +197,6 @@ select:valid+.labelline {
     top: 50%;
     transform: translateY(-50%);
     color: #777;
-    font-size: 15px;
 }
 
 button {
@@ -185,17 +222,17 @@ button:hover {
 .toggle-text {
     font-size: 0.875rem;
     color: var(--primary-color);
-    margin-top: 10px;
+    margin-top: 1rem;
     text-align: center;
 }
 
 .toggle-link {
     color: var(--primary-color);
     font-weight: 600;
-    text-decoration: underline;
+    text-decoration: none;
     display: block;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 0.5rem;
 }
 
 .toggle-link:hover {
@@ -251,8 +288,8 @@ button:hover {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
-    z-index: -1;
+    background-position: 12%;
+    z-index: 1;
 }
 
 .toggle-panel::after {
@@ -288,8 +325,6 @@ button:hover {
 .toggle-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-
-
 
 @media (max-width: 768px) {
     .container {
