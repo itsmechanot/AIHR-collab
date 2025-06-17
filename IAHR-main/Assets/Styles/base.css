@@ -113,20 +113,14 @@ h2 {
     width: 100%;
 }
 
-/* .divider {
- width: 50%;
-} */
-
 .header h2 {
     margin-top: 0;
     margin-bottom: 0;
-    /* border: 2px solid black; */
 }
 
 .header p {
     margin-top: 5px;
     text-align: center;
-    /* border: 2px solid blue; */
     color: var(--primary-color);
 }
 
@@ -139,13 +133,17 @@ h2 {
     position: relative;
     margin-bottom: 15px;
     margin-left: 10px;
-    /* border: 2px solid red; */
     width: 90%;
 }
 
-/* .input-container .i {
-    margin-left: 0 10px 0 30px;
-} */
+.input-container i {
+    position: absolute;
+    left: 260px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+}
+
 
 .sign-in_button {
     width: 80%;
