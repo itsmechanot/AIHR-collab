@@ -12,7 +12,6 @@
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -183,11 +182,21 @@ select:focus {
     box-shadow: 0 0 0 2px rgba(48, 35, 29, 0.2);
 }
 
-/* Label Animation */
 .labelline {
     position: absolute;
     left: 2.5rem;
     top: 0.75rem;
+    font-size: 0.875rem;
+    color: #777;
+    background: white;
+    padding: 0 0.25rem;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+.input-container .labelline{
+    position: absolute;
+    left: 2.5rem;
+    top: 0.65rem;
     font-size: 0.875rem;
     color: #777;
     background: white;
@@ -318,7 +327,7 @@ button:hover {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: 12%;
+    background-position: 25%;
     z-index: 1;
 }
 
@@ -327,7 +336,7 @@ button:hover {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: 70%;
+    background-position: 10%;
     z-index: 1;
 }
 
@@ -377,7 +386,6 @@ button:hover {
     .toggle-container {
         position: absolute;
         top: 0;
-        left: 28%;
         width: 80%;
         height: 100%;
         overflow: hidden;
@@ -407,7 +415,8 @@ button:hover {
 
     .form-container.sign-up {
         border-radius: 10px 40px 40px 10px;
-        margin-left: 0;
+        margin-left: 40px;
+        padding-right: 30px;
     }
 
     .form-section,
@@ -438,21 +447,29 @@ button:hover {
         width: 85%;
         margin-left: 7.5%;
     }
+
+    /* <-----FOR LOGIN FORM-------> */
+    .form-container.sign-in {
+        border-radius: 40px 10px 10px 40px;
+    }
+    .toggle-container .toggle-left {
+        margin-left: 180px;  
+    }
 }
 
 /* Responsive Styles For Mobile */
 @media (max-width: 320px) {
     .container {
+        position: relative;
         height: 500px;
-        width: 320px;
-        flex-direction: column;
+        width: 100%;
     }
 
     .form-container {
         position: absolute;
         width: 320px;
         height: 550px;
-        left: -20px;
+        left: -40px;
         top: -30px;
     }
 
@@ -461,14 +478,14 @@ button:hover {
         margin-left: 10px;
     }
 
-    .form-section {
+    .form-section.login_form {
         padding: 1.5rem;
         width: 100%;
         max-width: 320px;
     }
 
     .input-group i {
-        left: 230px;
+        left: 200px;
     }
 
     .container.active .sign-up {
@@ -481,18 +498,17 @@ button:hover {
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 0;
+        z-index: 1;
     }
 
     .toggle {
         display: flex;
         height: 100%;
-        width: 200%;
         transform: translateX(0);
     }
 
-    .toggle-bg1 {
-        position: absolute;
+    .toggle-bg1 {   
+        position: relative;
         width: 100%;
         height: 100%;
         background-size: cover;
@@ -502,4 +518,64 @@ button:hover {
         transition: opacity 0.5s ease;
     }
 
+/* <------LOG IN PAGE-------> */
+    .form-container.sign-in{
+        position: absolute;
+        width: 320px;
+        height: 550px;
+        left: -62%;
+    }
+    .header h2 {
+        font-size: 1.35rem;
+        display: flex;
+        width: 180px;
+        margin-left: -35px;
+    }
+
+    .header p {
+        display: flex;
+        font-size: 0.80rem;
+        width: 240px;
+        margin-left: -65px;
+    } 
+
+    .input-container {
+        width: 250px;
+        margin-left: -70px;
+    }
+    .input-container i{
+        left: 200px;
+    }
+
+    .sign-in_button{
+        width: 215px;
+        margin-top: 3px;
+        margin-left: -51px;
+        padding: 9px;
+    }
+     
+    .divider {
+        width: 245px;
+        margin-left: -65px;
+    }
+
+    .login_form .toggle-text {
+        width: 200px;
+        margin-left: -45px;
+    }
+    .login_form .toggle-link{
+        margin-left: -158px;
+    }
+    .toggle-bg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 150px;
+        background-size: cover;
+        filter: blur(5px);
+        transform: scale(1.1);
+        transition: opacity 0.5s ease;
+        background-position: 10;
+        /* z-index: 2; */
+    }
 }
