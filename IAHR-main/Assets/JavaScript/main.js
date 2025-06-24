@@ -4,41 +4,47 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.getElementById('login');
     const showRegister = document.getElementById('show-register');
     const showLogin = document.getElementById('show-login');
+    const toggleBg = document.querySelector('.toggle-bg');
+    const toggleBg1 = document.querySelector('.toggle-bg1');
+    const mobileBreakpoint = 767; 
 
-    // Toggle between forms
-    function showRegisterForm() {
+    function isMobile() {
+        return window.innerWidth <= mobileBreakpoint;
+    }
+
+    function updateBackground() {
+        if (!isMobile()) return; 
+        
+        if (container.classList.contains('active')) {
+            toggleBg.style.opacity = '1';
+            toggleBg1.style.opacity = '0';
+        } else {
+            toggleBg.style.opacity = '0';
+            toggleBg1.style.opacity = '1';
+        }
+    }
+
+    function showRegisterForm(e) {
+        if (e) e.preventDefault();
         container.classList.add("active");
+        updateBackground();
     }
 
-    function showLoginForm() {
+    function showLoginForm(e) {
+        if (e) e.preventDefault();
         container.classList.remove("active");
+        updateBackground();
     }
 
-    // Event listeners
+    updateBackground();
+
     registerBtn.addEventListener('click', showRegisterForm);
     loginBtn.addEventListener('click', showLoginForm);
-    showRegister.addEventListener('click', function(e) {
-        e.preventDefault();
-        showRegisterForm();
-    });
-    showLogin.addEventListener('click', function(e) {
-        e.preventDefault();
-        showLoginForm();
-    });
+    if (showRegister) {
+        showRegister.addEventListener('click', showRegisterForm);
+    }
+    if (showLogin) {
+        showLogin.addEventListener('click', showLoginForm);
+    }
+    window.addEventListener('resize', updateBackground);
 });
-//     // Password visibility toggle
-//     const passwordInput = document.getElementById('login-password');
-//     const eyeIcon = document.querySelector('.fa-eye-slash');
-    
-//     if (eyeIcon && passwordInput) {
-//         eyeIcon.addEventListener('click', function() {
-//             if (passwordInput.type === 'password') {
-//                 passwordInput.type = 'text';
-//                 eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
-//             } else {
-//                 passwordInput.type = 'password';
-//                 eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
-//             }
-//         });
-//     }
-// });
