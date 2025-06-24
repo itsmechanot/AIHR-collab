@@ -145,6 +145,9 @@ p {
     margin-left: 10px;
     width: 90%;
 }
+.input-container .labelline {
+        margin-top: -2px;
+    }  
 
 .input-group input {
     width: 90%;
@@ -218,7 +221,7 @@ select:valid+.labelline {
     left: 260px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--primary-color);
+    color: #777;
 }
 
 /* Buttons */
@@ -377,7 +380,7 @@ button:hover {
     .toggle-container {
         position: absolute;
         top: 0;
-        left: 28%;
+        left: 50%;
         width: 80%;
         height: 100%;
         overflow: hidden;
@@ -407,7 +410,8 @@ button:hover {
 
     .form-container.sign-up {
         border-radius: 10px 40px 40px 10px;
-        margin-left: 0;
+        margin-left: 30px;
+        padding-right: 15   px;
     }
 
     .form-section,
@@ -437,6 +441,18 @@ button:hover {
     .input-group select {
         width: 85%;
         margin-left: 7.5%;
+    }
+
+    .form-container.sign-in {
+        border-radius: 40px 10px 10px 40px;
+    }
+    .toggle-container .toggle-left {
+        margin-left: 180px;  
+    }
+    .sign-in_button{
+        padding: 8px;
+        width: 76%;
+        margin-left: 33px;
     }
 }
 
@@ -481,7 +497,7 @@ button:hover {
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 0;
+        z-index: 5;
     }
 
     .toggle {
@@ -492,7 +508,7 @@ button:hover {
     }
 
     .toggle-bg1 {
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 100%;
         background-size: cover;
@@ -502,4 +518,51 @@ button:hover {
         transition: opacity 0.5s ease;
     }
 
+    /* <------LOG IN PAGE-------> */
+    .form-container.sign-in{
+        position: absolute;
+        width: 320px;
+        height: 550px;
+        left: -75%;
+    }
+    .login_form{
+        align-items: center;
+        position: absolute;
+        left: -5px;
+    }
+
+    .header p {
+        font-size: 0.80rem;
+    } 
+
+    .input-container i{
+        left: 200px;
+    }
+
+    .input-container .fas.fa-eye-slash{
+        left: 196px;
+    }
+    .sign-in_button{
+        padding: 9px;
+    }
+    .toggle .toggle-panel .toggle-left {
+    position: fixed;
+}
+    .toggle-bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 20%;
+        background-size: cover;
+        background-position: center;
+        filter: blur(5px);
+        transform: scale(1.1);
+        transition: opacity 0.5s ease;
+        z-index: 1;
+    }
+    @media (max-width: 320px) {
+        .form-container.sign-in{
+            left: -90%;
+        }
+    }
 }
